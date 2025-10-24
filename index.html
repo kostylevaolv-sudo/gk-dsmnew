@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ДСМ-груп (DSM GROUP) — строительство промышленных и коммерческих объектов под ключ</title>
+  <meta name="description" content="ДСМ-груп (DSM GROUP): генподряд, проектирование и строительство промышленных и коммерческих объектов по России. Складские и логистические комплексы, производственные корпуса, торговые и офисные здания, инженерные сети. Смета за 24 часа." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ДСМ-груп (DSM GROUP) — строительство под ключ" />
+  <meta property="og:description" content="Генподряд, проектирование, строительство. Сроки, безопасность, качество. Смета за 24 часа." />
+  <meta property="og:site_name" content="ДСМ-груп (DSM GROUP)" />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta name="theme-color" content="#1A554F" />
+  <link rel="canonical" href="https://kostylevaolv-sudo.github.io/dsm-group/" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#1A554F;   /* фирменный зелёный */
+      --accent:#B89F4D;  /* фирменный золотой */
+      --bg:#0E1A18;      /* тёмный фон hero (в тон бренду) */
+      --surface:#FFFFFF;
+      --text:#0F172A;
+      --muted:#6B7280;
+      --line:#E5E7EB;
+      --success:#10B981;
+      --danger:#EF4444;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(3,7,18,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:#F5F7F9;
+      line-height:1.55;
+    }
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1180px;margin:0 auto;padding:0 20px}
+
+    header.topbar{
+      position:sticky;top:0;z-index:40;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-logo{height:44px;width:auto;display:block}
+    .brand-title{font-weight:800;color:#0B1220;letter-spacing:.2px}
+    .brand-sub{font-size:12px;color:var(--muted);margin-top:-4px}
+
+    .menu{display:flex;gap:24px;align-items:center}
+    .menu a{color:#0B1220;font-weight:600}
+    .cta{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--brand);color:#fff;border:0;
+      padding:12px 18px;border-radius:12px;font-weight:800;
+      box-shadow:var(--shadow);cursor:pointer
+    }
+    .cta.secondary{background:#fff;color:var(--brand);border:1px solid var(--brand)}
+    .cta.accent{background:var(--accent);color:#1A1A1A}
+
+    .hero{
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(26,85,79,.28), transparent 60%),
+        url('https://images.unsplash.com/photo-1523861751938-68b767b803f6?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat,
+        var(--bg);
+      color:#fff;
+    }
+    .hero .wrap{backdrop-filter:brightness(.9);padding:80px 0}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+    .eyebrow{display:inline-block;background:rgba(255,255,255,.14);padding:6px 10px;border-radius:30px;font-size:13px;letter-spacing:.4px}
+    h1{font-size:44px;line-height:1.1;margin:16px 0 14px;font-weight:800}
+    .lead{font-size:18px;color:#E5E7EB;max-width:720px}
+    .hero-cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+    .kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:14px;border-radius:12px}
+    .kpi strong{display:block;font-size:22px;color:#fff}
+
+    .section{padding:64px 0;background:#fff}
+    .section.alt{background:#F9FAFB}
+    h2{font-size:34px;margin:0 0 12px}
+    .sub{color:var(--muted);margin-bottom:26px}
+    .grid{display:grid;gap:20px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+      box-shadow:0 3px 16px rgba(2,6,23,.06);padding:20px
+    }
+    .icon{
+      width:38px;height:38px;border-radius:10px;background:#EAF1EF;
+      display:grid;place-items:center;color:var(--brand);margin-bottom:10px
+    }
+    .list{margin:8px 0 0;padding-left:18px;color:#4B5563}
+    .list li{margin:6px 0}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px dashed var(--line);border-radius:999px;color:#374151;background:#fff}
+
+    .process{counter-reset:step}
+    .step{position:relative;padding-left:52px}
+    .step::before{
+      counter-increment:step;content:counter(step);
+      position:absolute;left:0;top:2px;width:36px;height:36px;border-radius:10px;
+      background:var(--accent);color:#1A1A1A;display:grid;place-items:center;font-weight:700
+    }
+
+    .project{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:center}
+    .project img{width:100%;height:220px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+
+    .dl{display:grid;grid-template-columns:160px 1fr;gap:8px;margin-top:8px}
+    .dl div:nth-child(odd){color:#6B7280}
+
+    .pill{
+      display:inline-block;background:#FBF6E7;
+      color:#6E5A22;border:1px solid var(--accent);
+      padding:4px 10px;border-radius:999px;font-size:13px
+    }
+    .quote{
+      background:linear-gradient(180deg,#FFFFFF 0%,#F8FAFC 100%);
+      border:1px solid var(--line);border-radius:16px;padding:18px
+    }
+
+    .faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+    .faq summary{font-weight:600;cursor:pointer}
+
+    .form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{font-weight:600;font-size:14px;margin-bottom:6px;display:block}
+    input,select,textarea{width:100%;padding:12px 12px;border:1px solid #D1D5DB;border-radius:12px;background:#fff;font:inherit}
+    textarea{min-height:120px;resize:vertical}
+    .help{font-size:12px;color:var(--muted)}
+    .status{margin-top:10px;font-size:14px}
+    .map{border-radius:14px;border:1px solid var(--line);overflow:hidden;height:260px;background:linear-gradient(135deg,#E5E7EB,#F3F4F6);display:grid;place-items:center;color:#6B7280}
+
+    footer{background:#0E1A18;color:#CBD5E1;padding:36px 0}
+    footer a{color:#DCC885}
+    .foot-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:20px}
+    .legal{font-size:12px;color:#9CA3AF;margin-top:10px}
+
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chips .chip{background:#EAF1EF;color:#1A554F;border-radius:999px;padding:6px 10px;font-size:13px}
+    .muted{color:#6B7280}
+    .danger{color:var(--danger)}
+
+    @media (max-width:1024px){
+      .hero-grid,.project{grid-template-columns:1fr}
+      .kpis{grid-template-columns:repeat(2,1fr)}
+      .grid.cols-3{grid-template-columns:repeat(2,1fr)}
+      .foot-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:640px){
+      .menu{display:none}
+      .kpis{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
+      h1{font-size:34px}
+      h2{font-size:28px}
+      .nav{height:64px}
+    }
+    .mt-12{margin-top:12px}.mt-20{margin-top:20px}.mt-24{margin-top:24px}.mt-28{margin-top:28px}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"ДСМ-груп (DSM GROUP)",
+    "url":"https://kostylevaolv-sudo.github.io/dsm-group/",
+    "logo":"https://kostylevaolv-sudo.github.io/dsm-group/assets/logo.png",
+    "email":"info@gk-dsm.ru",
+    "telephone":"+7-981-979-54-29",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Торфяная дорога 7Ф, офис 1023, БЦ Гуливер-2",
+      "addressLocality":"Санкт-Петербург",
+      "addressCountry":"RU"
+    },
+    "description":"Строительство промышленных и коммерческих объектов под ключ. Генподряд, проектирование, инженерные системы, реконструкция."
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к содержимому</a>
+
+  <header class="topbar" role="banner">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <img class="brand-logo" src="assets/logo.png" alt="DSM GROUP — логотип" />
+        <div>
+          <div class="brand-title">DSM GROUP</div>
+          <div class="brand-sub">Строим для бизнеса</div>
+        </div>
+      </a>
+      <nav class="menu" aria-label="Главное меню">
+        <a href="#services">Услуги</a>
+        <a href="#projects">Проекты</a>
+        <a href="#process">Процесс</a>
+        <a href="#why">Преимущества</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+        <button class="cta accent" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">
+          Получить смету <span aria-hidden="true">➜</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Генподряд • Проектирование • Ввод в эксплуатацию</span>
+          <h1>Промышленные и коммерческие объекты под ключ</h1>
+          <p class="lead">DSM GROUP — полный цикл: от идеи и предпроекта до стройки и передачи объекта. Сроки, безопасность и качество — в приоритете. Предварительная смета в течение 24 часов.</p>
+          <div class="hero-cta">
+            <button class="cta accent" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Запросить смету</button>
+            <a class="cta secondary" href="#projects">Смотреть проекты</a>
+          </div>
+          <div class="kpis">
+            <div class="kpi"><strong>15+ лет</strong><span>в строительстве</span></div>
+            <div class="kpi"><strong>2,1 млн м²</strong><span>построенной площади</span></div>
+            <div class="kpi"><strong>98%</strong><span>объектов вовремя</span></div>
+            <div class="kpi"><strong>0 LTI</strong><span>серьёзных инцидентов</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <div class="badge" style="border-color:#E9E2CF;background:#FBF6E7;color:#6E5A22">Сертификаты: СРО • ISO 9001/14001/45001</div>
+            <p class="mt-12">Работаем по всей России и ЕАЭС. Фиксируем срок и цену в договоре. Прозрачная отчётность и авторский надзор. Интеграция BIM и 4D‑планирования.</p>
+            <div class="chips mt-12">
+              <div class="chip">Промпредприятия</div>
+              <div class="chip">Склад/Логистика</div>
+              <div class="chip">Торговые центры</div>
+              <div class="chip">Офисы</div>
+              <div class="chip">Реконструкция</div>
+            </div>
+            <p class="help mt-12">Документы и свидетельства предоставим по запросу.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" tabindex="-1">
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Услуги</h2>
+        <p class="sub">Закрываем полный цикл реализации объектов капитального строительства.</p>
+        <div class="grid cols-3">
+          <div class="card">
+            <div class="icon">🏗️</div>
+            <h3>Генподряд</h3>
+            <ul class="list">
+              <li>Управление сроками, бюджетом и рисками</li>
+              <li>Подбор и контроль субподрядчиков</li>
+              <li>Комплектация материалами и оборудованием</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">📐</div>
+            <h3>Проектирование и обследование</h3>
+            <ul class="list">
+              <li>Предпроектные решения, ТЭП, BIM‑моделирование</li>
+              <li>Инженерные изыскания и обследование зданий</li>
+              <li>Проекты разделов АР/КР/ОВ/ВК/ЭО/СС</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">🏭</div>
+            <h3>Промышленные здания</h3>
+            <ul class="list">
+              <li>Производственные корпуса, цеха, вспомогательные здания</li>
+              <li>ЖБ и металлокаркасы, КМ/КМД</li>
+              <li>Технологические проёмы, мостовые краны</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">📦</div>
+            <h3>Складские и логистические комплексы</h3>
+            <ul class="list">
+              <li>Классы A/A+ с доковыми зонами и спринклерами</li>
+              <li>Температурные режимы, стеллажные системы</li>
+              <li>АСУ ТП, WMS‑инфраструктура</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">🏢</div>
+            <h3>Торговые и офисные объекты</h3>
+            <ul class="list">
+              <li>ТРЦ, street‑retail, бизнес‑центры</li>
+              <li>Fit‑out, инженерные сети, отделка</li>
+              <li>Навигация и МГН</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">🔧</div>
+            <h3>Инженерные системы</h3>
+            <ul class="list">
+              <li>ОВ/ВК/ЭО/СС, пожарная безопасность</li>
+              <li>Холодоснабжение, вентиляция, дымоудаление</li>
+              <li>СКУД, видеонаблюдение, слаботочные сети</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">♻️</div>
+            <h3>Реконструкция и модернизация</h3>
+            <ul class="list">
+              <li>Усиление конструкций, изменение планировок</li>
+              <li>Работы без остановки производства</li>
+              <li>Повышение энергоэффективности</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">🧱</div>
+            <h3>Нулевой цикл и каркас</h3>
+            <ul class="list">
+              <li>Фундаменты, плиты, дренажи</li>
+              <li>ЖБ/металлоконструкции, ограждающие конструкции</li>
+              <li>Промышленные полы, кровли</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">📋</div>
+            <h3>Сопровождение и ввод</h3>
+            <ul class="list">
+              <li>Согласования, экспертиза, техзаказчик</li>
+              <li>ПНР, исполнительная документация</li>
+              <li>Ввод в эксплуатацию, гарантия до 5 лет</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-24">
+          <span class="pill">Отрасли</span>
+          <div class="chips mt-12">
+            <div class="chip">Логистика и e‑commerce</div>
+            <div class="chip">Пищевая промышленность</div>
+            <div class="chip">Фарма и химия</div>
+            <div class="chip">FMCG и ритейл</div>
+            <div class="chip">Агро</div>
+            <div class="chip">Энергетика</div>
+            <div class="chip">Дата‑центры</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section alt">
+      <div class="container">
+        <h2>Как мы работаем</h2>
+        <p class="sub">Прозрачный процесс и контроль на каждом этапе.</p>
+        <div class="grid cols-3 process">
+          <div class="card step"><h3>Запрос и бриф</h3><p class="mt-12">Цели, ограничения, сроки, бюджет. NDA при необходимости.</p></div>
+          <div class="card step"><h3>Аналитика и смета</h3><p class="mt-12">Предварительная смета и календарный план 24–72 часа. Оптимизации по стоимости и срокам.</p></div>
+          <div class="card step"><h3>Договор и графики</h3><p class="mt-12">KPI, контрольные точки, ответственность и SLA.</p></div>
+          <div class="card step"><h3>Проектирование</h3><p class="mt-12">BIM/4D, коллизии, спецификации, экспертиза.</p></div>
+          <div class="card step"><h3>Строительство</h3><p class="mt-12">Отчёты, HSE‑инспекции, входной контроль, авторский надзор.</p></div>
+          <div class="card step"><h3>ПНР и ввод</h3><p class="mt-12">ПНР, обучение персонала, ИД, ввод и гарантийная поддержка.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Выбранные проекты</h2>
+        <p class="sub">Несколько кейсов с ключевыми метриками. Полный портфель — по запросу.</p>
+
+        <div class="card project">
+          <img alt="Логистический комплекс" src="https://images.unsplash.com/photo-1590318230018-ed3a5f0a1a25?q=80&w=1200&auto=format&fit=crop" />
+          <div>
+            <h3>Логистический центр «Север»</h3>
+            <div class="dl">
+              <div>Локация</div><div>Московская область</div>
+              <div>Площадь</div><div>62 000 м², класс A+</div>
+              <div>Срок</div><div>11 месяцев</div>
+              <div>Роль</div><div>Генподряд</div>
+            </div>
+            <ul class="list mt-8">
+              <li>120 доков, потолки 12,5 м, полы FM2</li>
+              <li>Спринклерная система ESFR, адресная пожарка</li>
+              <li>Интеграция с WMS, энергомониторинг</li>
+            </ul>
+            <p class="mt-8"><strong>Результат:</strong> запуск на 6 недель раньше графика, экономия CAPEX 7,8%.</p>
+          </div>
+        </div>
+
+        <div class="card project mt-20">
+          <img alt="Производственный корпус" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1200&auto=format&fit=crop" />
+          <div>
+            <h3>Производственный корпус пищевой промышленности</h3>
+            <div class="dl">
+              <div>Локация</div><div>Нижегородская область</div>
+              <div>Площадь</div><div>24 800 м²</div>
+              <div>Срок</div><div>14 месяцев</div>
+              <div>Роль</div><div>Генподряд + проектирование</div>
+            </div>
+            <ul class="list mt-8">
+              <li>Чистые зоны ISO 8, санитарные шлюзы</li>
+              <li>Холодоснабжение, аммиакопровод</li>
+              <li>Технологические проёмы под линии</li>
+            </ul>
+            <p class="mt-8"><strong>Результат:</strong> сертификация HACCP, снижение энергопотребления на 18%.</p>
+          </div>
+        </div>
+
+        <div class="card project mt-20">
+          <img alt="Торгово-офисный комплекс" src="https://images.unsplash.com/photo-1536268748181-58e22ee3d2fd?q=80&w=1200&auto=format&fit=crop" />
+          <div>
+            <h3>Торгово‑офисный комплекс «Квартал»</h3>
+            <div class="dl">
+              <div>Локация</div><div>Казань</div>
+              <div>Площадь</div><div>38 500 м²</div>
+              <div>Срок</div><div>12 месяцев</div>
+              <div>Роль</div><div>Генподряд</div>
+            </div>
+            <ul class="list mt-8">
+              <li>Вентилируемые фасады и остекление unitized</li>
+              <li>Подземная парковка 420 м/м</li>
+              <li>BMS, зелёные технологии, МГН</li>
+            </ul>
+            <p class="mt-8"><strong>Результат:</strong> класс энергоэффективности «А», посещаемость выше плана на 12%.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section alt">
+      <div class="container">
+        <h2>Почему DSM GROUP</h2>
+        <p class="sub">Фокус на предсказуемости результата: сроки, бюджет, безопасность.</p>
+        <div class="grid cols-3">
+          <div class="card">
+            <div class="icon">🗓️</div>
+            <h3>Фиксируем сроки и цену</h3>
+            <p>Жёсткая дисциплина графика, управляемые риски, KPI в договоре.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🔍</div>
+            <h3>Прозрачность</h3>
+            <p>Еженедельные отчёты, фото/видео, дроны, BI‑дашборды.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🛡️</div>
+            <h3>Безопасность HSE</h3>
+            <p>Нулевой травматизм LTI. Инструктажи, инспекции, аудит подрядчиков.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🧠</div>
+            <h3>BIM и 4D‑планирование</h3>
+            <p>Коллизии на этапе проекта, точные объёмы и сроки.</p>
+          </div>
+          <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Сильная инженерия</h3>
+            <p>Служба ПТО, авторский надзор, входной контроль.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🤝</div>
+            <h3>Проверенные подрядчики</h3>
+            <p>Только квалифицированные бригады с KPI по качеству.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <h2>FAQ</h2>
+        <div class="grid cols-3 faq">
+          <details open><summary>Смета и сроки</summary><p class="mt-12">Предварительная смета и календарный план за 24–72 часа после получения исходных данных.</p></details>
+          <details><summary>Гарантии</summary><p class="mt-12">Конструкции — до 5 лет, инженерия/отделка — 1–3 года. Условия фиксируем в договоре.</p></details>
+          <details><summary>Работа на действующем производстве</summary><p class="mt-12">Планируем по «окнам», пыле‑ и шумозащита, безопасность персонала.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="quote" class="section alt">
+      <div class="container">
+        <h2>Запросите смету</h2>
+        <p class="sub">Оставьте контакты — вернёмся с предварительным решением в течение 24 часов.</p>
+        <form class="form" id="leadForm" novalidate>
+          <div class="row">
+            <div><label for="name">Имя и компания</label><input id="name" name="name" placeholder="Иван Петров, ООО «Пример»" required /></div>
+            <div><label for="phone">Телефон</label><input id="phone" name="phone" placeholder="+7 (xxx) xxx-xx-xx" required /></div>
+            <div><label for="email">Email</label><input id="email" type="email" name="email" placeholder="you@example.com" required /></div>
+            <div><label for="type">Тип объекта</label>
+              <select id="type" name="type" required>
+                <option value="">Выберите...</option>
+                <option>Склад / Логистика</option>
+                <option>Производство</option>
+                <option>Торговый объект</option>
+                <option>Офис / Бизнес‑центр</option>
+                <option>Реконструкция</option>
+              </select>
+            </div>
+            <div><label for="area">Площадь, м²</label><input id="area" name="area" placeholder="Например, 25000" /></div>
+            <div><label for="city">Город</label><input id="city" name="city" placeholder="Город/регион" /></div>
+          </div>
+          <div class="mt-12">
+            <label for="msg">Кратко о проекте</label>
+            <textarea id="msg" name="message" placeholder="Стадия, сроки, требования, бюджетные рамки..."></textarea>
+          </div>
+          <div class="mt-12"><input type="checkbox" id="agree" required /> <label for="agree" class="help">Согласен(на) с обработкой данных</label></div>
+          <div class="mt-12"><button class="cta accent" type="submit">Отправить запрос</button> <span class="help">или info@gk-dsm.ru</span></div>
+          <div id="formStatus" class="status"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="container">
+        <h2>Контакты</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>DSM GROUP</h3>
+            <p>Адрес: Санкт-Петербург, Торфяная дорога 7Ф, офис 1023, БЦ «Гуливер‑2»</p>
+            <p>Тел.: <a href="tel:+79819795429">+7 (981) 979‑54‑29</a></p>
+            <p>Email: <a href="mailto:info@gk-dsm.ru">info@gk-dsm.ru</a></p>
+            <p>Пн‑Пт 09:00–19:00</p>
+          </div>
+          <div class="card">
+            <h3>Для тендеров и закупок</h3>
+            <p>Коммерческие запросы: <a href="mailto:info@gk-dsm.ru">info@gk-dsm.ru</a></p>
+            <p>Подрядчикам: <a href="mailto:info@gk-dsm.ru">info@gk-dsm.ru</a></p>
+            <p>HR: <a href="mailto:info@gk-dsm.ru">info@gk-dsm.ru</a></p>
+            <p class="help">Прикладывайте ТЗ, схемы, сроки и критерии оценки.</p>
+          </div>
+          <div class="map">
+            Карта офиса — вставьте виджет Яндекс.Карт
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container foot-grid">
+      <div>
+        <div class="brand" style="text-decoration:none">
+          <img class="brand-logo" src="assets/logo.png" alt="DSM GROUP — логотип" />
+          <div>
+            <div class="brand-title" style="color:#fff">DSM GROUP</div>
+            <div class="brand-sub" style="color:#DCC885">Строительство под ключ</div>
+          </div>
+        </div>
+        <p class="legal">© 2025 ООО «ДСМ-груп». Все права защищены.</p>
+        <p class="legal">Информация на сайте носит ознакомительный характер и не является публичной офертой.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <p><a href="#services">Услуги</a> · <a href="#projects">Проекты</a> · <a href="#process">Процесс</a> · <a href="#faq">FAQ</a> · <a href="#contacts">Контакты</a></p>
+        <p><a href="#" onclick="alert('Раздел в разработке')">Политика конфиденциальности</a></p>
+      </div>
+      <div>
+        <h4>Соцсети</h4>
+        <p><a href="#" onclick="alert('Ссылка для примера')">Telegram</a> · <a href="#" onclick="alert('Ссылка для примера')">VK</a> · <a href="#" onclick="alert('Ссылка для примера')">YouTube</a></p>
+        <p class="help">Подпишитесь, чтобы видеть наши стройки в реальном времени.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('leadForm');
+    const statusEl = document.getElementById('formStatus');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = '';
+      const data = Object.fromEntries(new FormData(form).entries());
+      const errs = [];
+      if(!data.name || data.name.trim().length < 3) errs.push('Укажите имя и компанию');
+      if(!data.phone || data.phone.replace(/\D/g,'').length < 10) errs.push('Укажите корректный телефон');
+      if(!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errs.push('Укажите корректный email');
+      if(!document.getElementById('agree').checked) errs.push('Подтвердите согласие');
+      if(errs.length){ statusEl.textContent = errs.join(' · '); statusEl.className = 'status danger'; return; }
+      try{
+        const resp = await fetch('https://httpbin.org/post',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({source:'site',...data})});
+        if(resp.ok){ statusEl.textContent = 'Спасибо! Свяжемся в течение рабочего дня.'; statusEl.className = 'status'; form.reset(); }
+        else throw new Error('network');
+      }catch(err){ statusEl.textContent = 'Не удалось отправить. Напишите на info@gk-dsm.ru'; statusEl.className = 'status danger'; }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
+    });
+  </script>
+</body>
+</html>
